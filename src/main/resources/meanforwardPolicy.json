@@ -1,0 +1,33 @@
+{
+    "policyId" : "MeanTemperatureForwardPolicy",
+    "dataSources" : [
+    	{
+    		"type" : "topic",
+    		"topicProperties":{
+    			"topicName":"system.devices.*.sensors.*"
+    		}	
+    	}
+    ],
+    "policy":{
+    	"inputBuffer": {
+    		"noOfMessage":1024,
+    		"dropStrategy":"fifo"
+    	},
+    	"storage": {
+    		"type":"persistent",
+    		"persistenceProperties":{
+    			"diskSize":"100MB"
+    		}
+    	} 
+    },
+    "destinations" : [
+        {
+            "connector" : "system:service:storeandforward:connector:mqtt",
+            "mqttProperties" : {
+                        "host" : "10.78.106.35",
+                        "port" : "1883",
+                        "topic"   : "tempAggregates",
+            }
+        }
+    ]
+}

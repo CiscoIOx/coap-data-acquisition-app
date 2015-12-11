@@ -1,0 +1,14 @@
+{  
+   "dataSchemaId":"VCNLSchema",
+   "description":"Data Schema for sensor emitting ambience values",
+   "fields":[  
+      {  
+         "name":"ambience",
+         "type":"double"
+      },
+      {  
+         "name":"proximity",
+         "type":"double"
+      }
+   ]
+}

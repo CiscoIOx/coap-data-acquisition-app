@@ -1,0 +1,11 @@
+{  
+   "dataSchemaId":"temperatureSchema",
+   "description":"Data Schema for sensor emitting temperature values",
+   "fields":[  
+      {  
+         "name":"temperature",
+         "type":"float",
+         "unit":"centrigrade"
+      }
+   ]
+}

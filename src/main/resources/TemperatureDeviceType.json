@@ -1,0 +1,25 @@
+{  
+   "displayName":"APC Temperature Containers",
+   "deviceTypeId":"apcv1000",
+   "protocol":"coap",
+   "protocolHandler":"system:service:protocolHandler:coap-server",
+   
+   "sensors":[  
+      {  
+         "name":"TemperatureSensor",
+         "dataSchemaId":"temperatureSchema",
+         "contentHandler":{  
+         	"contentType": "raw",
+            "contentMappings":[  
+               {  
+                  "fieldName":"temperature",
+                  "expression":".",
+                  "protocolProperties":{  
+                     "uri":"Container/temperature"
+                  }
+               }
+            ]
+         }
+      }
+   ]
+}

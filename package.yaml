@@ -1,0 +1,51 @@
+descriptor-schema-version: "2.0"
+
+info:
+  name: APCargo
+  description: "App which helps transportation companies which ships pharmaceutical products to monitor temperature values in containers and report sla violations."
+  version: "1.0"
+  author-link: "http://www.cisco.com"
+  author-name: "Cisco Systems"
+
+app:
+  # Indicate app type (vm, paas, lxc etc.,)
+  type: paas
+  depends-on:
+    services:
+      -
+        min-api-version: 1
+        required: true
+        id: "system:core:messaging-infra"
+      -
+        min-api-version: 1
+        required: true
+        id: "system:service:provisioning"
+      -
+        min-api-version: 1
+        required: true
+        id: "system:service:storeandforward"
+      -
+        min-api-version: 1
+        required: true
+        id: "system:service:stream-analytics"
+      -
+        min-api-version: 1
+        required: true
+        id: "system:service:plugin:coap-server"
+
+  resources:
+    profile: c1.small
+    network:
+      -
+        interface-name: eth0
+        ports:
+          tcp:
+            - 9090
+
+  startup:
+    runtime: java
+    runtime-options:
+      classpath: ".:$CAF_APP_PATH/lib/*:$CAF_APP_PATH/resources/:$CAF_APP_PATH/lib/third-party/*"
+      java-options: -Dmqtt_broker=tcp://10.78.106.35:1883
+    runtime-version: 1.8
+    target: com.cisco.iox.ContainerTemperatureSlaApp

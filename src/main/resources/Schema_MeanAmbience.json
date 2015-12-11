@@ -1,0 +1,15 @@
+{  
+   "dataSchemaId":"meanAmbience",
+   "description":"Data Schema for emitting Ambience output values",
+   "fields":[  
+      {  
+         "name":"device",
+         "type":"string"
+      },
+      {  
+         "name":"AvgAmbience",
+         "type":"float",
+         "unit":"centrigrade"
+      }
+   ]
+}

@@ -1,0 +1,26 @@
+{  
+   "dataSchemaId":"GPSSchema",
+   "description":"Data Schema for sensor emitting GPS co-ordinates",
+   "fields":[  
+      {  
+         "name":"longitude",
+         "type":"double"
+      },
+      {  
+         "name":"latitude",
+         "type":"double"
+      },
+      {  
+         "name":"altitude",
+         "type":"double"
+      },
+      {  
+         "name":"speed",
+         "type":"double"
+      },
+      {  
+         "name":"course",
+         "type":"double"
+      }
+   ]
+}
