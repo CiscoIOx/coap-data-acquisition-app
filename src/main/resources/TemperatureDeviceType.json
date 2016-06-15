@@ -1,25 +1,36 @@
 {  
-   "displayName":"APC Temperature Containers",
+   "displayName":"APC Smart Containers",
    "deviceTypeId":"apcv1000",
-   "protocol":"coap",
-   "protocolHandler":"system:service:protocolHandler:coap-server",
-   
+   "protocol":"modbus",
+   "protocolHandler":"system:service:protocolHandler:modbus-tcp",
    "sensors":[  
       {  
          "name":"TemperatureSensor",
          "dataSchemaId":"temperatureSchema",
-         "contentHandler":{  
-         	"contentType": "raw",
-            "contentMappings":[  
-               {  
-                  "fieldName":"temperature",
-                  "expression":".",
-                  "protocolProperties":{  
-                     "uri":"Container/temperature"
-                  }
-               }
-            ]
-         }
+
+         "contentHandler": {
+                "contentType":"raw",
+                "contentMappings":[
+                    {
+                        "fieldName":"temperature",
+                        "expression":".",
+                        "protocolProperties":{  
+                            "style":"analog",
+                            "mode":"write",
+                            "registerRange":"40001-2"
+                         }
+                    },
+                    {
+                        "fieldName":"humidity",
+                        "expression":".",
+                        "protocolProperties":{  
+                            "style":"analog",
+                            "mode":"write",
+                            "registerRange":"40003-2"
+                         }
+                    }
+                ]
+            }
       }
    ]
 }

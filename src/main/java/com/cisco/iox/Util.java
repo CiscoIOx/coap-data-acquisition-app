@@ -15,7 +15,7 @@ public class Util {
         InputStream resourceAsStream = null;
         InputStreamReader inputStreamReader = null;
         try {
-            resourceAsStream = com.cisco.iox.ContainerTemperatureSlaApp.class.getClassLoader().getResourceAsStream(fileName);
+            resourceAsStream = com.cisco.iox.APCargoEdgeApplication.class.getClassLoader().getResourceAsStream(fileName);
             inputStreamReader = new InputStreamReader(resourceAsStream);
             ObjectMapper objectMapper = new ObjectMapper();
             JSONObject readValue;

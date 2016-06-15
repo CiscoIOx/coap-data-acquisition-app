@@ -4,8 +4,11 @@
    "fields":[  
       {  
          "name":"temperature",
-         "type":"float",
-         "unit":"centrigrade"
+         "type":"float"
+      },
+      {  
+         "name":"humidity",
+         "type":"float"
       }
    ]
 }

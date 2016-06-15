@@ -4,11 +4,7 @@
   "metadata": {
     "skuCode": "sk3465tyu",
     "serialNo": "567e",
-    "urn": "shipping/container/A",
-    "location": {
-      "latitude": "34.6",
-      "longitude": "30.2"
-    }
+    "urn": "shipping/container/A"
   },
   "connectionProperties": [
     {
